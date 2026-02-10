@@ -51,6 +51,128 @@ unions of these basic types, pointers to them, and functions that return them.
 
 Integer division truncates: any fractional part is discarded. 5/9 would be truncated to zero
 
+### Extern
+
+An external variable must be defined, exactly once, outside of any function; this sets aside
+storage for it.
+
+The variable must also be declared in each function that wants to access it; this
+states the type of the variable. The declaration may be an explicit extern statement or may be implicit from context.
+
+## Arrays 
+
+```C
+int ndigit[10];
+```
+
+### Char arrays
+
+```C
+#include <stdio.h>
+#define MAXLINE 1000 /* maximum input line length */
+
+int getline(char line[], int maxline); //Supplying the size of an array is to set aside storage
+void copy(char to[], char from[]);
+
+/* print the longest input line */
+main()
+{
+ 	int len; /* current line length */
+ 	int max; /* maximum length seen so far */
+ 	char line[MAXLINE]; /* current input line */
+ 	char longest[MAXLINE]; /* longest line saved here */
+ 	max = 0;
+ 	while ((len = getline(line, MAXLINE)) > 0)
+	{
+ 		if (len > max)
+		{
+ 			max = len;
+			copy(longest, line);
+		}
+	}
+	if (max > 0) /* there was a line */
+	{
+		printf("%s", longest);
+	}
+ 	return 0;
+ }
+
+/* getline: read a line into s, return length */
+int getline(char s[],int lim)
+{
+ 	int c, i;
+ 	for (i=0; i < lim-1 && (c=getchar())!=EOF && c!='\n'; ++i)
+	{
+ 		s[i] = c;
+	}
+ 	if (c == '\n')
+	{
+ 		s[i] = c;
+ 		++i;
+ 	}
+	s[i] = '\0';
+ 	return i;
+} 
+
+/* copy: copy 'from' into 'to'; assume to is big enough */
+void copy(char to[], char from[])
+{
+	int i;
+ 	i = 0;
+ 	while ((to[i] = from[i]) != '\0')
+	{
+ 		++i;
+	}
+ }
+```
+
+## Functions 
+
+Definition:
+```C
+return-type function-name(parameter declarations, if any)
+{
+ 	declarations
+ 	statements
+} 
+```
+
+Example:
+```C
+#include <stdio.h>
+int power(int m, int n); //forward declare
+
+main()
+{
+	int i;
+	for (i = 0; i < 10; ++i)
+	{
+ 		printf("%d %d %d\n", i, power(2,i), power(-3,i));
+	}
+ 	return 0;
+}
+/* power: raise base to n-th power; n >= 0 */
+int power(int base, int n)
+{
+ 	int p;
+	for (p = 1; n > 0; --n)
+	{
+		p = p * base;
+	}
+	return p;
+}
+```
+
+parameter names are optional in a function prototype:
+
+```C
+int power(int, int);
+int power(); //old style, avoid
+```
+
+Typically, a return value of zero implies normal
+termination; non-zero values signal unusual or erroneous termination conditions.
+
 ## printf
 
 * %d print as decimal integer
