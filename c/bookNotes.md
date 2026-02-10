@@ -1,6 +1,7 @@
-https://seriouscomputerist.atariverse.com/media/pdf/book/C%20Programming%20Language%20-%202nd%20Edition%20(OCR).pdf
+<details open>
+<summary><h1>Basics</h1></summary>
 
-# Basics 
+[The C Programming Language Book](https://seriouscomputerist.atariverse.com/media/pdf/book/C%20Programming%20Language%20-%202nd%20Edition%20(OCR).pdf)
 
 Compile with the command cc hello.c 
 
@@ -42,14 +43,6 @@ main()
 	}
 }
 ```
-
-## Data types
-
-C provides data types: int, float, char, short, long, double. 
-The size of these objects is machine-dependent. There are also arrays, structures and
-unions of these basic types, pointers to them, and functions that return them.
-
-Integer division truncates: any fractional part is discarded. 5/9 would be truncated to zero
 
 ### Extern
 
@@ -173,7 +166,7 @@ int power(); //old style, avoid
 Typically, a return value of zero implies normal
 termination; non-zero values signal unusual or erroneous termination conditions.
 
-## printf
+## String literals (printf)
 
 * %d print as decimal integer
 * %6d print as decimal integer, at least 6 characters wide
@@ -186,10 +179,6 @@ termination; non-zero values signal unusual or erroneous termination conditions.
 * %c for character
 * %s for character string
 * %% for itself
-
-//TODO
-Among the others that C provides are \t for tab, \b for backspace, \" for the double quote
-and \\ for the backslash itself. There is a complete list in Section 2.3. 
 
 ## Char input output
 
@@ -207,3 +196,80 @@ and \\ for the backslash itself. There is a complete list in Section 2.3.
 	}
 }
 ```
+</details>
+
+<details open>
+<summary><h1>Types, Operators and Expressions</h1>h1> </summary>
+
+Names are made up of letters and digits; the first character must be a
+letter. The underscore ``_'' counts as a letter
+
+Traditional C practice is to use lower case for variable names, and
+all upper case for symbolic constants. 
+
+## Data types
+
+There are only a few basic data types in C:
+
+- **char** – a single byte, capable of holding one character in the local character set  
+- **int** – an integer, typically reflecting the natural size of integers on the host machine (usually 16 or 32 bits)  
+- **float** – single-precision floating point  
+  - suffixes **f** or **F** indicate a float constant  
+- **double** – double-precision floating point  
+
+The size of these objects is machine-dependent. There are also arrays, structures and
+unions of these basic types, pointers to them, and functions that return them.
+
+Integer division truncates: any fractional part is discarded. 5/9 would be truncated to zero
+
+### Type Qualifiers
+
+A number of qualifiers can be applied to these basic types.
+
+**short** and **long** apply to integers:
+
+- `short int sh;`
+- `long int counter;`
+
+Suffixes **l** or **L** indicate a long constant.  
+The word `int` can be omitted in such declarations, and typically it is:
+
+- `short sh;`
+- `long counter;`
+
+### Signed and Unsigned
+
+The qualifiers **signed** or **unsigned** may be applied to `char` or any integer type:
+
+- `signed int sh;`
+- `unsigned int counter;`
+
+Suffixes **u** or **U** indicate an unsigned constant.
+
+### Integer Constants
+
+The value of an integer can be specified in octal or hexadecimal:
+
+- A leading **0** (zero) on an integer constant means **octal**
+- A leading **0x** or **0X** means **hexadecimal**
+
+### Character constants
+
+| Escape Sequence | Meaning                     |
+|-----------------|-----------------------------|
+| \a              | alert (bell) character      |
+| \b              | backspace                   |
+| \f              | formfeed                    |
+| \n              | newline                     |
+| \r              | carriage return             |
+| \t              | horizontal tab              |
+| \v              | vertical tab                |
+| \\              | backslash                   |
+| \?              | question mark               |
+| \'              | single quote                |
+| \"              | double quote                |
+| \ooo            | octal number                |
+| \xhh            | hexadecimal number          |
+
+
+</details>
