@@ -211,11 +211,12 @@ all upper case for symbolic constants.
 
 There are only a few basic data types in C:
 
-- **char** – a single byte, capable of holding one character in the local character set  
-- **int** – an integer, typically reflecting the natural size of integers on the host machine (usually 16 or 32 bits)  
-- **float** – single-precision floating point  
-  - suffixes **f** or **F** indicate a float constant  
-- **double** – double-precision floating point  
+| Data Type | Description |
+|-----------|-------------|
+| `char`    | A single byte, capable of holding one character in the local character set |
+| `int`     | An integer, typically reflecting the natural size of integers on the host machine (usually 16 or 32 bits) |
+| `float`   | Single-precision floating point. Suffixes **f** or **F** indicate a float constant |
+| `double`  | Double-precision floating point |
 
 The size of these objects is machine-dependent. There are also arrays, structures and
 unions of these basic types, pointers to them, and functions that return them.
@@ -224,29 +225,18 @@ Integer division truncates: any fractional part is discarded. 5/9 would be trunc
 
 ### Type Qualifiers
 
-A number of qualifiers can be applied to these basic types.
+Several qualifiers can be applied to these basic types.
 
 **short** and **long** apply to integers:
 
 - `short int sh;`
-- `long int counter;`
-
-Suffixes **l** or **L** indicate a long constant.  
-The word `int` can be omitted in such declarations, and typically it is:
-
-- `short sh;`
-- `long counter;`
-
-### Signed and Unsigned
+- `long int counter;` Suffixes **l** or **L** indicate a long constant.  
+The word `int` can be omitted in such declarations, and typically it is.
 
 The qualifiers **signed** or **unsigned** may be applied to `char` or any integer type:
 
 - `signed int sh;`
-- `unsigned int counter;`
-
-Suffixes **u** or **U** indicate an unsigned constant.
-
-### Integer Constants
+- `unsigned int counter;` Suffixes **u** or **U** indicate an unsigned constant.
 
 The value of an integer can be specified in octal or hexadecimal:
 
