@@ -141,6 +141,10 @@ Key points:
 
 - Lightweight → no heavy reference counting like shared_ptr.
 
+### Move
+
+Basically just triggers a more specialised overload to avoid copying resources
+
 ## Some optimisation notes
 
 ### Optimisation with lock and unlock
