@@ -156,6 +156,8 @@ Basically just triggers a more specialised overload to avoid copying resources
 <details open>
 <summary><h2>Containers</h2></summary>
 
+//TODO
+
 * Array vs Vector
 
 Arrays are fixed size
@@ -164,14 +166,15 @@ Vector is dynamically resized
 
 Capacity 
 
+How to insert or delete it in O(1)
+
 ### Optimising vector writing
 
 When a vector is being written to every frame, for temporary storage
 
 Just serize it to max on initialise c:
 
-
-
+</details>
 
 
 <details>
@@ -195,5 +198,13 @@ Linear allocator used every loop to store data from dynamic objects
 - Heard of bindless?
 
 Yes
+
+- Unit tests and automated testing, TDD, how to use it for rendering
+
+- Optimizing tehcniques for rendering a lot of objects
+
+Culling, deffered rendering, batching?
+
+- 
 
 </details>
