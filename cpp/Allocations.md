@@ -1,5 +1,6 @@
 <details open>
 <summary><h2>Memory layout</h2></summary>
+<hr>
     
 ### Text segment
 
@@ -29,8 +30,9 @@ https://www.geeksforgeeks.org/c/memory-layout-of-c-program/
 
 <details open>
 <summary><h2>Pointers and stuff</h2></summary>
-
-## New and Delete
+<hr>
+    
+### New and Delete
 
 New gives you memory.
 
@@ -81,7 +83,7 @@ void operator__delete__double(double* ptr);
 
 https://cplusplus.com/reference/new/operator%20new/
 
-## Raw pointers
+### Raw pointers
 
 A raw pointer (T*) in C++ is a basic memory address holder that can point to an object or nullptr. It’s powerful and flexible, but unsafe if you don’t handle it carefully.
 
@@ -147,7 +149,7 @@ Key points:
 
 - Lightweight → no heavy reference counting like shared_ptr.
 
-## Move
+### Move
 
 Basically just triggers a more specialised overload to avoid copying resources
 
@@ -155,7 +157,8 @@ Basically just triggers a more specialised overload to avoid copying resources
 
 <details open>
 <summary><h2>Containers</h2></summary>
-
+<hr>
+    
 //TODO
 
 * Array vs Vector
@@ -176,11 +179,10 @@ Just serize it to max on initialise c:
 
 </details>
 
-
 <details>
-
 <summary>Some more todo notes</summary>
-
+<hr>
+    
 ## Notes
 
 - Render passes
