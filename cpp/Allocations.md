@@ -1,4 +1,5 @@
-## Memory layout
+<details open>
+<summary><h2>Memory layout</h2></summary>
     
 ### Text segment
 
@@ -23,6 +24,11 @@ Allocating on stack: scope declaration
 The stack is a region of memory used for local variables and function call management. Each time a function is called, a stack frame is created to store local variables, function parameters, and return addresses. 
 
 https://www.geeksforgeeks.org/c/memory-layout-of-c-program/
+
+</details>
+
+<details open>
+<summary><h2>Pointers and stuff</h2></summary>
 
 ## New and Delete
 
@@ -141,23 +147,32 @@ Key points:
 
 - Lightweight → no heavy reference counting like shared_ptr.
 
-### Move
+## Move
 
 Basically just triggers a more specialised overload to avoid copying resources
 
-## Some optimisation notes
+</details>
 
-### Optimisation with lock and unlock
+<details open>
+<summary><h2>Containers</h2></summary>
 
-One of the techniques you used to optimise a slow system
+* Array vs Vector
 
-If it is not a highly contested resource, it is fine to use. Often works in an editor context
+Arrays are fixed size
+
+Vector is dynamically resized
+
+Capacity 
 
 ### Optimising vector writing
 
 When a vector is being written to every frame, for temporary storage
 
 Just serize it to max on initialise c:
+
+
+
+
 
 <details>
 
