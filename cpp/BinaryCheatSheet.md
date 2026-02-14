@@ -2,7 +2,6 @@
 
 <img src = "https://user-images.githubusercontent.com/31730144/161545606-138e6dc5-038d-4558-9bda-29e591c69b9c.png" width = "400">
 
-
 Bit operators are faster than * or / but same speed as + and -
 
 Bit type size
@@ -16,8 +15,10 @@ static_cast<BitType>(1) << index;
 ```
 
 ## Bit Flags
-Can set bools into an int basically
 
+Instead of using separate bools, multiple flags can be combined into one field
+
+Single flag examples / defines
 ```CPP
 MAGIC = 16; //0001 0000
 INTEL =  8; //0000 1000
@@ -26,18 +27,13 @@ FLY   =  2; //0000 0010
 INV   =  1; //0000 0001
 ```
 
-Setting attributes
-```CPP
-attributes = 20; // 16 + 4
-attributes = MAGIC + CHARISMA;
-attributes = MAGIC | CHARISMA; //10100
-
-attributes = 0; //clear all
-attributes = ~0; //set all
-```
+Combining different flags
 
 Adding
 ```CPP
+attributes = MAGIC + CHARISMA; //aritmetic 16 + 4
+attributes = MAGIC | CHARISMA; //bitwise or = 10100
+
 attributes |= INTEL; //11100
 attributes |= (INTEL | MAGIC | CHAR);
 ```
@@ -46,6 +42,9 @@ Unsetting
 ```CPP
 attributes &= ~MAGIC; //01100
 attributes &= ~(INTEL | MAGIC);
+
+attributes = 0; //clear all
+attributes = ~0; //set all
 ``` 
 
 Toggling
@@ -68,7 +67,10 @@ bool match = (attributes & mask) == mask; //will be true if all of the bits in m
 
 ## Bit Shift
 
-Setting flags without the numbers
+x << 2 shifts the value of x by two positions, filling vacated bits with zero
+
+this is equivalent to multiplication by 4
+
 ```CPP
 MAGIC = 1 << 4; //0001 0000
 INTEL = 1 << 3; //0000 1000
