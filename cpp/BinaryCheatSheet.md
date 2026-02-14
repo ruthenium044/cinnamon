@@ -51,6 +51,11 @@ Toggling
 ```CPP
 attributes ^= MAGIC; //01100
 attributes ^= (INTEL | MAGIC);
+```
+
+Flipping the bits
+```CPP
+attributes = ~MAGIC; //1110 1111
 ``` 
 
 ## Bit Mask
