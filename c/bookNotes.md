@@ -61,6 +61,77 @@ the end of the file being compiled.
 If an external variable is to be referred to before it is defined, or if it is
 defined in a different source file from the one where it is being used, then an extern declaration is mandatory. 
 
+### Static 
+
+The static declaration, applied to an external variable or function, limits the scope of
+that object to the rest of the source file being compiled. 
+
+### Register
+
+A register declaration advises the compiler that the variable in question will be heavily
+used.
+
+## Functions 
+
+Definition:
+```C
+return-type function-name(parameter declarations, if any)
+{
+ 	declarations
+ 	statements
+} 
+```
+
+Example:
+```C
+#include <stdio.h>
+int power(int m, int n); //forward declare
+
+main()
+{
+	int i;
+	for (i = 0; i < 10; ++i)
+	{
+ 		printf("%d %d %d\n", i, power(2,i), power(-3,i));
+	}
+ 	return 0;
+}
+/* power: raise base to n-th power; n >= 0 */
+int power(int base, int n)
+{
+ 	int p;
+	for (p = 1; n > 0; --n)
+	{
+		p = p * base;
+	}
+	return p;
+}
+```
+
+parameter names are optional in a function prototype:
+
+```C
+int power(int, int);
+int power(); //old style, avoid
+```
+
+Typically, a return value of zero implies normal
+termination; non-zero values signal unusual or erroneous termination conditions.
+
+</details>
+
+<details open>
+<summary><h1>Pointers and arrays</h1>h1> </summary>
+
+## Pointers
+
+A pointer is a variable that contains the address of a variable.
+
+The unary operator & gives the address of an object.
+
+The unary operator * is the indirection or dereferencing operator; when applied to a pointer, it
+accesses the object the pointer points to.
+
 ## Arrays 
 
 ```C
@@ -128,83 +199,6 @@ void copy(char to[], char from[])
  }
 ```
 
-## Functions 
-
-Definition:
-```C
-return-type function-name(parameter declarations, if any)
-{
- 	declarations
- 	statements
-} 
-```
-
-Example:
-```C
-#include <stdio.h>
-int power(int m, int n); //forward declare
-
-main()
-{
-	int i;
-	for (i = 0; i < 10; ++i)
-	{
- 		printf("%d %d %d\n", i, power(2,i), power(-3,i));
-	}
- 	return 0;
-}
-/* power: raise base to n-th power; n >= 0 */
-int power(int base, int n)
-{
- 	int p;
-	for (p = 1; n > 0; --n)
-	{
-		p = p * base;
-	}
-	return p;
-}
-```
-
-parameter names are optional in a function prototype:
-
-```C
-int power(int, int);
-int power(); //old style, avoid
-```
-
-Typically, a return value of zero implies normal
-termination; non-zero values signal unusual or erroneous termination conditions.
-
-## String literals (printf)
-
-* %d print as decimal integer
-* %6d print as decimal integer, at least 6 characters wide
-* %f print as floating point
-* %6f print as floating point, at least 6 characters wide
-* %.2f print as floating point, 2 characters after decimal point
-* %6.2f print as floating point, at least 6 wide and 2 after decimal point 
-* %o for octal
-* %x for hexadecimal
-* %c for character
-* %s for character string
-* %% for itself
-
-## Char input output
-
-```C
-#include <stdio.h>
- /* copy input to output; 1st version */
- main()
- {
- int c;
- c = getchar();
-//while ((c = getchar()) != EOF) 
-	while (c != EOF) {
-		putchar(c);
-		c = getchar();
-	}
-}
-```
 </details>
 
 <details open>
@@ -271,4 +265,34 @@ The value of an integer can be specified in octal or hexadecimal:
 | \xhh            | hexadecimal number          |
 
 
+## String literals (printf)
+
+* %d print as decimal integer
+* %6d print as decimal integer, at least 6 characters wide
+* %f print as floating point
+* %6f print as floating point, at least 6 characters wide
+* %.2f print as floating point, 2 characters after decimal point
+* %6.2f print as floating point, at least 6 wide and 2 after decimal point 
+* %o for octal
+* %x for hexadecimal
+* %c for character
+* %s for character string
+* %% for itself
+
+## Char input output
+
+```C
+#include <stdio.h>
+ /* copy input to output; 1st version */
+ main()
+ {
+ int c;
+ c = getchar();
+//while ((c = getchar()) != EOF) 
+	while (c != EOF) {
+		putchar(c);
+		c = getchar();
+	}
+}
+```
 </details>
