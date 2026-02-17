@@ -46,11 +46,20 @@ main()
 
 ### Extern
 
-An external variable must be defined, exactly once, outside of any function; this sets aside
-storage for it.
+A variable is external if it is defined outside of any function
+
+It must be defined, exactly once, outside of any function; this sets aside storage for it.
 
 The variable must also be declared in each function that wants to access it; this
 states the type of the variable. The declaration may be an explicit extern statement or may be implicit from context.
+
+Functions themselves are always external, because C does not allow functions to be defined inside other functions
+
+The scope of an external variable or a function lasts from the point at which it is declared to
+the end of the file being compiled.
+
+If an external variable is to be referred to before it is defined, or if it is
+defined in a different source file from the one where it is being used, then an extern declaration is mandatory. 
 
 ## Arrays 
 
