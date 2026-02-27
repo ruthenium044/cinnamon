@@ -144,6 +144,10 @@ ip = &z[0];		/* ip now points to z[0] */
 
 ## Arrays 
 
+Any operation that can be achieved by array
+subscripting can also be done with pointers. The pointer version will in general be faster but,
+at least to the uninitiated, somewhat harder to understand. 
+
 ```C
 int ndigit[10];
 ```
