@@ -171,6 +171,10 @@ Capacity
 
 How to insert or delete it in O(1)
 
+Pop and push to a queue is usually O(1)
+
+Searches in hash is usually O(1) or O(k). While trees usually have O(log(n))
+
 ### Optimising vector writing
 
 When a vector is being written to every frame, for temporary storage
