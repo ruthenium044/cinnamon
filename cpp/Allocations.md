@@ -34,6 +34,12 @@ https://www.geeksforgeeks.org/c/memory-layout-of-c-program/
 
 ### Basics
 
+### Memory Management of Variables
+
+When we create or declare a variable, a fixed-size memory block is assigned to the variable, and Uninitialized local (automatic) variables may contain garbage (indeterminate) values, whereas global and static variables are automatically initialized to zero.
+
+Variables essentially manipulate specific memory locations, and their stored data is accessed via their names.
+
 A declaration introduces a name and its type to the compiler
 
 It may be a definition, but it doesn’t have to provide storage (for objects) or a body (for functions)
