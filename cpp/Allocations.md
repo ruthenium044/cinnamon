@@ -34,6 +34,10 @@ https://www.geeksforgeeks.org/c/memory-layout-of-c-program/
 
 ### Basics
 
+A declaration introduces a name and its type to the compiler
+
+It may be a definition, but it doesn’t have to provide storage (for objects) or a body (for functions)
+
 #### Func arguments
 
 const T& is a read-only reference: the function can inspect the vector without copying it, and the caller can pass const vectors (and even temporaries).
@@ -48,8 +52,8 @@ void constFunc(const T& v);
 const std::vector<int> constVec{1,2,3};
 std::vector<int> vec{1,2,3};
 
-constFunc(constVec);                // ok
 constFunc(vec);                     // ok
+constFunc(constVec);                // ok
 constFunc(std::vector<int>{1,2,3}); // ok (temporary)
 ```
 
@@ -58,8 +62,8 @@ This does not:
 ``` CPP
 void refFunc(T& v);
 
-refFunc(constVec);                 // ok
-refFunc(vec);                      // error: cannot bind non-const ref to const
+refFunc(vec);                      // ok
+refFunc(constVec);                 // error: cannot bind non-const ref to const
 refFunc(std::vector<int>{1,2,3});  // error: cannot bind non-const ref to temporary
 ```
     
