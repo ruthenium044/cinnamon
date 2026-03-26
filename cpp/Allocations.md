@@ -31,6 +31,37 @@ https://www.geeksforgeeks.org/c/memory-layout-of-c-program/
 <details open>
 <summary><h2>Pointers and stuff</h2></summary>
 <hr>
+
+### Basics
+
+#### Func arguments
+
+const T& is a read-only reference: the function can inspect the vector without copying it, and the caller can pass const vectors (and even temporaries).
+
+T& is a writable reference: the function may modify the vector, and the caller must pass a non-const lvalue vector.
+
+This works:
+
+``` CPP
+void constFunc(const T& v);
+
+const std::vector<int> constVec{1,2,3};
+std::vector<int> vec{1,2,3};
+
+constFunc(constVec);                // ok
+constFunc(vec);                     // ok
+constFunc(std::vector<int>{1,2,3}); // ok (temporary)
+```
+
+This does not:
+
+``` CPP
+void refFunc(T& v);
+
+refFunc(constVec);                 // ok
+refFunc(vec);                      // error: cannot bind non-const ref to const
+refFunc(std::vector<int>{1,2,3});  // error: cannot bind non-const ref to temporary
+```
     
 ### New and Delete
 
