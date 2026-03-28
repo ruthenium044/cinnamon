@@ -140,6 +140,13 @@ Key points:
 
 - Fast & lightweight → just stores an address, no overhead.
 
+int* ptr; declares a pointer to an integer.
+
+ptr = &x; stores the address of variable x in the pointer ptr.
+
+*ptr is called the dereference operator. It gives us access to the value stored at the memory address ptr is pointing to.
+
+
 ## Smart pointers
 
 ### Unique
