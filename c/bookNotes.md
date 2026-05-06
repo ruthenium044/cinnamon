@@ -1,4 +1,24 @@
-<details open>
+## Navigation
+
+- [Basics](#basics)
+  - [Extern](#extern)
+  - [Static](#static)
+  - [Register](#register)
+  - [Functions](#functions)
+- [Pointers and arrays](#pointers-and-arrays)
+  - [Pointers](#pointers)
+  - [Arrays](#arrays)
+  - [Char arrays](#char-arrays)
+- [Types, Operators and Expressions](#types-operators-and-expressions)
+  - [Data types](#data-types)
+  - [Type Qualifiers](#type-qualifiers)
+  - [Character constants](#character-constants)
+  - [String literals](#string-literals-printf)
+  - [Char input output](#char-input-output)
+
+---
+
+<details open id="basics">
 <summary><h1>Basics</h1></summary>
 
 [The C Programming Language Book](https://seriouscomputerist.atariverse.com/media/pdf/book/C%20Programming%20Language%20-%202nd%20Edition%20(OCR).pdf)
@@ -120,7 +140,7 @@ termination; non-zero values signal unusual or erroneous termination conditions.
 
 </details>
 
-<details open>
+<details open id="pointers-and-arrays">
 <summary><h1>Pointers and arrays</h1> </summary>
 
 ## Pointers
@@ -215,7 +235,7 @@ void copy(char to[], char from[])
 
 </details>
 
-<details open>
+<details open id="types-operators-and-expressions">
 <summary><h1>Types, Operators and Expressions</h1>h1> </summary>
 
 Names are made up of letters and digits; the first character must be a
