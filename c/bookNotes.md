@@ -23,6 +23,8 @@
 
 [The C Programming Language Book](https://seriouscomputerist.atariverse.com/media/pdf/book/C%20Programming%20Language%20-%202nd%20Edition%20(OCR).pdf)
 
+pg114
+
 Compile with the command cc hello.c 
 
 Run with a.out 
