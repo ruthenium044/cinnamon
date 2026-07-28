@@ -11,7 +11,13 @@
 - [x] https://www.geeksforgeeks.org/c/memory-layout-of-c-program/
 - [ ] https://people.freebsd.org/~lstewart/articles/cpumemory.pdf
 - [ ] https://therealmjp.github.io/posts/ten-years-of-d3d12/#all-in-on-bindless-and-user-space-bindings
+
+## CPP Reading
 - [x] https://en.cppreference.com/cpp/language/reinterpret_cast
+- [ ] https://en.cppreference.com/cpp/language/new
+- [ ] https://cppreference.com/cpp/ranges
+- [ ] https://cppreference.com/cpp/iterator
+- [ ] https://en.cppreference.com/cpp/language/structured_binding
 
 ### API stuff
 - [x] https://ruby0x1.github.io/machinery_blog_archive/post/little-machines-working-together-part-1/index.html
